@@ -2,7 +2,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import CommentDetail from "./CommentDetail";
+import ApprovalCard from "./ApprovalCard";
 import faker from "faker";
+
 //Create a react components
 const App = function () {
   const buttonText = "Click Me";
@@ -18,24 +20,30 @@ const App = function () {
       </button>  
     </div> */
     <div className="ui container comments">
-      <CommentDetail
-        author="Sam"
-        timeAgo="Today at 4:45"
-        avatar={faker.image.image()}
-        text="Hi"
-      />
-      <CommentDetail
-        author="Alex"
-        timeAgo="Today at 2:00"
-        avatar={faker.image.image()}
-        text="Hi Sam"
-      />
-      <CommentDetail
-        author="Jane"
-        timeAgo="Yesterday at 5:00"
-        avatar={faker.image.image()}
-        text="How are you?"
-      />
+      <ApprovalCard>
+        <CommentDetail
+          author="Sam"
+          timeAgo="Today at 4:45"
+          avatar={faker.image.image()}
+          text="Hi"
+        />
+      </ApprovalCard>
+      <ApprovalCard>
+        <CommentDetail
+          author="Alex"
+          timeAgo="Today at 2:00"
+          avatar={faker.image.image()}
+          text="Hi Sam"
+        />
+      </ApprovalCard>
+      <ApprovalCard>
+        <CommentDetail
+          author="Jane"
+          timeAgo="Yesterday at 5:00"
+          avatar={faker.image.image()}
+          text="How are you?"
+        />
+      </ApprovalCard>
     </div>
   );
 };
