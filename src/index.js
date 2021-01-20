@@ -1,12 +1,14 @@
 //Import the React and ReactDOM libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
+import CommentDetail from './CommentDetail';
 
 //Create a react components
 const App = function(){
   const buttonText = "Click Me"
   return (
-    <div> 
+    //Section 2
+/*     <div> 
       <label className ="label" htmlFor = "name">
         Enter Name:
       </label>
@@ -14,8 +16,12 @@ const App = function(){
       <button style = {{backgroundColor: 'blue', color: 'white'}}>
         {buttonText}
       </button>  
+    </div> */
+    <div className = "ui container comments">
+      <CommentDetail/>
+      <CommentDetail/>
+      <CommentDetail/>
     </div>
-
   );
 };
 
