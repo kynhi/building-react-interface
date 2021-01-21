@@ -6,49 +6,67 @@ import ApprovalCard from "./ApprovalCard";
 import faker from "faker";
 
 //Create a react components
-const App = function () {
-  const buttonText = "Click Me";
-  return (
-    //Section 2
-    /*     <div> 
-      <label className ="label" htmlFor = "name">
-        Enter Name:
-      </label>
-      <input id = "name" type = "text"/>
-      <button style = {{backgroundColor: 'blue', color: 'white'}}>
-        {buttonText}
-      </button>  
-    </div> */
-    <div className="ui container comments">
-      <ApprovalCard>
-        <CommentDetail
-          author="Sam"
-          timeAgo="Today at 4:45"
-          avatar={faker.image.image()}
-          text="Hi"
-        />
-      </ApprovalCard>
-      <ApprovalCard>
-        <CommentDetail
-          author="Alex"
-          timeAgo="Today at 2:00"
-          avatar={faker.image.image()}
-          text="Hi Sam"
-        />
-      </ApprovalCard>
-      <ApprovalCard>
-        <CommentDetail
-          author="Jane"
-          timeAgo="Yesterday at 5:00"
-          avatar={faker.image.image()}
-          text="How are you?"
-        />
-      </ApprovalCard>
-    </div>
-  );
-};
+// const App = function () {
+//   const buttonText = "Click Me";
+//   return (
+//     //Section 2
+//     /*     <div> 
+//       <label className ="label" htmlFor = "name">
+//         Enter Name:
+//       </label>
+//       <input id = "name" type = "text"/>
+//       <button style = {{backgroundColor: 'blue', color: 'white'}}>
+//         {buttonText}
+//       </button>  
+//     </div> */
+// Section 3 :Communicateing with Props
+//     <div className="ui container comments">
+//       <ApprovalCard>
+//         <CommentDetail
+//           author="Sam"
+//           timeAgo="Today at 4:45"
+//           avatar={faker.image.image()}
+//           text="Hi"
+//         />
+//       </ApprovalCard>
+//       <ApprovalCard>
+//         <CommentDetail
+//           author="Alex"
+//           timeAgo="Today at 2:00"
+//           avatar={faker.image.image()}
+//           text="Hi Sam"
+//         />
+//       </ApprovalCard>
+//       <ApprovalCard>
+//         <CommentDetail
+//           author="Jane"
+//           timeAgo="Yesterday at 5:00"
+//           avatar={faker.image.image()}
+//           text="How are you?"
+//         />
+//       </ApprovalCard>
+//     </div>
+//   );
+// };
 
 // Take the react component and show it on the screen
+
+const App = () =>{
+  window.navigator.geolocation.getCurrentPosition(
+    (position) => console.log(position),
+    (err) => console.log(err)
+  );
+  return (
+    <div> Hi There</div>
+  );
+}
+
+class App extends React.Component{
+
+  render(){
+    return <div>Latitude</div>
+  }
+}
 
 ReactDOM.render(<App />, document.querySelector("#root"));
 
