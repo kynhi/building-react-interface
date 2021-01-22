@@ -1,23 +1,23 @@
 //Import the React and ReactDOM libraries
 import React from "react";
 import ReactDOM from "react-dom";
-import CommentDetail from "./CommentDetail";
-import ApprovalCard from "./ApprovalCard";
-import faker from "faker";
+//import CommentDetail from "./CommentDetail";
+//import ApprovalCard from "./ApprovalCard";
+//import faker from "faker";
 
 //Create a react components
 // const App = function () {
 //   const buttonText = "Click Me";
 //   return (
 //     //Section 2
-//     /*     <div> 
+//     /*     <div>
 //       <label className ="label" htmlFor = "name">
 //         Enter Name:
 //       </label>
 //       <input id = "name" type = "text"/>
 //       <button style = {{backgroundColor: 'blue', color: 'white'}}>
 //         {buttonText}
-//       </button>  
+//       </button>
 //     </div> */
 // Section 3 :Communicateing with Props
 //     <div className="ui container comments">
@@ -51,20 +51,21 @@ import faker from "faker";
 
 // Take the react component and show it on the screen
 
-const App = () =>{
-  window.navigator.geolocation.getCurrentPosition(
-    (position) => console.log(position),
-    (err) => console.log(err)
-  );
-  return (
-    <div> Hi There</div>
-  );
-}
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { lat: null };
+    window.navigator.geolocation.getCurrentPosition(
+      (position) => {
+        //call setState to update state object 
+        this.setState({lat: position.coords.latitude});
+      },
+      (err) => console.log(err)
+    );
+  }
+  render() {
 
-class App extends React.Component{
-
-  render(){
-    return <div>Latitude</div>
+    return <div>Latitude:{this.state.lat}</div>;
   }
 }
 
