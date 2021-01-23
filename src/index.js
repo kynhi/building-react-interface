@@ -5,6 +5,7 @@ import ReactDOM from "react-dom";
 //import ApprovalCard from "./ApprovalCard";
 //import faker from "faker";
 import SeasonDisplay from "./SeasonDisplay"
+import Spinner from "./Spinner";
 //Create a react components
 // const App = function () {
 //   const buttonText = "Click Me";
@@ -82,7 +83,7 @@ class App extends React.Component {
       return <SeasonDisplay lat={this.state.lat} />
     }
 
-    return <div>Loadiing...</div>;
+    return <Spinner message = "Please allow Location Access"/>;
   }
 }
 
