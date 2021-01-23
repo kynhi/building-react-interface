@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 //import CommentDetail from "./CommentDetail";
 //import ApprovalCard from "./ApprovalCard";
 //import faker from "faker";
-
+import SeasonDisplay from "./SeasonDisplay"
 //Create a react components
 // const App = function () {
 //   const buttonText = "Click Me";
@@ -52,9 +52,14 @@ import ReactDOM from "react-dom";
 // Take the react component and show it on the screen
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { lat: null, errorMessage: '' };
+  // constructor(props) {
+  //   super(props);
+  //   this.state = { lat: null, errorMessage: '' };
+
+  // }
+  //refactor using babel 
+  state={lat:null};
+  componentDidMount(){
     window.navigator.geolocation.getCurrentPosition(
       (position) => {
         //call setState to update state object 
@@ -65,12 +70,16 @@ class App extends React.Component {
       }
     );
   }
+
+  componentDidUpdate(){
+
+  }
   render() {
     if (this.state.errorMessage && !this.state.lat){
       return <div>Error Message: {this.state.errorMessage} </div>
     }
     if (!this.state.errorMessage && this.state.lat){
-      return <div>Latitude:{this.state.lat} </div>
+      return <SeasonDisplay lat={this.state.lat} />
     }
 
     return <div>Loadiing...</div>;
