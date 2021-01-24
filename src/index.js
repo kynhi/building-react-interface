@@ -75,7 +75,8 @@ class App extends React.Component {
   componentDidUpdate(){
 
   }
-  render() {
+
+  renderContent(){
     if (this.state.errorMessage && !this.state.lat){
       return <div>Error Message: {this.state.errorMessage} </div>
     }
@@ -84,6 +85,13 @@ class App extends React.Component {
     }
 
     return <Spinner message = "Please allow Location Access"/>;
+  }
+  render() {
+    return (
+      <div className ="border red">
+        {this.renderContent()}
+      </div>
+    );
   }
 }
 
